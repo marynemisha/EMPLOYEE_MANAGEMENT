@@ -31,9 +31,9 @@ class EmployeeManager(DbConnect):
             query = "select * from employee"
             self.cursor.execute(query)
             records = self.cursor.fetchall()
-            print(records)
+            return records
         except Exception as e:
-            print(e)
+           return []
     def post(self,id=None,**kwargs):
         try:
             self.connect = super().get_connect()
@@ -96,7 +96,7 @@ emp_instance=EmployeeManager()
 # emp_instance.get()
 # emp_instance.retrieve(id=1)
 # emp_instance.get_object(id=1)
-emp_instance.retrieve(id=1)
-emp_instance.delete(id=3)
-emp_instance.put(id=1,name="Anju",place="EKM",mobile="9876543210",email="anju23@gmail.com",department="IT",salary="30000",joining_date=datetime.datetime.today())
-emp_instance.get()
+# emp_instance.retrieve(id=1)
+# emp_instance.delete(id=3)
+# emp_instance.put(id=1,name="Anju",place="EKM",mobile="9876543210",email="anju23@gmail.com",department="IT",salary="30000",joining_date=datetime.datetime.today())
+# emp_instance.get()
